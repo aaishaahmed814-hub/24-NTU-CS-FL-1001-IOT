@@ -1,8 +1,39 @@
+
 {
   "version": 1,
   "author": "Aaisha Ahmed",
   "editor": "wokwi",
-  "parts": [ { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} } ],
-  "connections": [ [ "esp:TX", "$serialMonitor:RX", "", [] ], [ "esp:RX", "$serialMonitor:TX", "", [] ] ],
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -10,
+      "left": 250,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 65,
+      "left": 230,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:2", "led1:A", "green", []],
+    ["led1:C", "r1:1", "green", []],
+    ["r1:2", "esp:GND.1", "black", []]
+  ],
   "dependencies": {}
 }
