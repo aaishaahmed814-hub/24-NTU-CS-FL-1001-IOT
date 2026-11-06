@@ -5,20 +5,21 @@
 void setup()
 {
     Serial.begin(115200);
-    Serial.println("ESP32 DAC Brightness Fade");
 }
 
 void loop()
 {
+    // Increase brightness
     for (int value = 0; value <= 255; value++)
     {
         dacWrite(DAC_PIN, value);
-        delay(10);
+        delay(20);  // Change to 5ms or 50ms
     }
 
+    // Decrease brightness
     for (int value = 255; value >= 0; value--)
     {
         dacWrite(DAC_PIN, value);
-        delay(10);
+        delay(20);  // Change to 5ms or 50ms
     }
 }
