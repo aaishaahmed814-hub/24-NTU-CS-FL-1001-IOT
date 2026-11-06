@@ -13,13 +13,13 @@ void loop()
     for (int value = 0; value <= 255; value++)
     {
         dacWrite(DAC_PIN, value);
-        delay(20);  // Change to 5ms or 50ms
+        delay(5);  // Change to 5ms or 50ms
     }
 
     // Decrease brightness
     for (int value = 255; value >= 0; value--)
     {
         dacWrite(DAC_PIN, value);
-        delay(20);  // Change to 5ms or 50ms
+        delay(5);  // Change to 5ms or 50ms
     }
 }
