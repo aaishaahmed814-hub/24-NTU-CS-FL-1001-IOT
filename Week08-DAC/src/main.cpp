@@ -1,10 +1,12 @@
+
 #include <Arduino.h>
 
-#define DAC_PIN 25
+#define DAC_PIN 26
 
 void setup()
 {
     Serial.begin(115200);
+    Serial.println("ESP32 DAC2 LED Fading");
 }
 
 void loop()
@@ -13,13 +15,13 @@ void loop()
     for (int value = 0; value <= 255; value++)
     {
         dacWrite(DAC_PIN, value);
-        delay(50);
+        delay(20);
     }
 
     // Decrease brightness
     for (int value = 255; value >= 0; value--)
     {
         dacWrite(DAC_PIN, value);
-        delay(50); 
+        delay(20);
     }
 }
